@@ -1,0 +1,12 @@
+pandas>=2.1
+pyarrow>=16.0
+numpy>=1.26
+tqdm>=4.66
+Pillow>=10.3
+datasets>=2.19
+accelerate>=0.34
+transformers>=4.45
+torch>=2.1
+
+# Install VERL as an editable dependency
+-e ./verl
