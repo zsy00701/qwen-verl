@@ -13,14 +13,6 @@ pip install -r requirements.txt
 
 ```bash
 python scripts/prepare_mathvista.py \
-  --source-json /path/to/MathVista/testmini.json \
-  --image-root /path/to/MathVista/images \
-  --export-images-to data/mathvista_images \
-  --output data/mathvista_testmini.parquet
-```
-
-```bash
-python scripts/prepare_mathvista.py \
   --hf-dataset AI4Math/MathVista \
   --split testmini \
   --export-images-to data/mathvista_images \
@@ -29,7 +21,9 @@ python scripts/prepare_mathvista.py \
 
 ## 3. Run generation
 
+
 ```bash
+chomd +x scripts/run_generation.sh
 scripts/run_generation.sh \
   --dataset data/mathvista_testmini.parquet \
   --image-root data/mathvista_images \
@@ -42,7 +36,9 @@ scripts/run_generation.sh \
 
 ## 4. Evaluate predictions
 
+
 ```bash
+chomd +x scripts/run_eval.sh
 scripts/run_eval.sh --predictions outputs/qwen25vl_mathvista.parquet
 ```
 
